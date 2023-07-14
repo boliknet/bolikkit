@@ -1,0 +1,65 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Check UI components
+        run: deno run -A .github/check_ui.ts
+
+  integrations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Check integrations
+        run: deno run -A .github/check_int.ts
+
+  bolibu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Test
+        working-directory: bolibu
+        run: deno task test
+
+      - name: Check format
+        working-directory: bolibu
+        run: deno fmt --check
+
+      - name: Check linting
+        working-directory: bolibu
+        run: deno lint
+
+      - name: Typecheck
+        working-directory: bolibu
+        run: deno check mod.ts

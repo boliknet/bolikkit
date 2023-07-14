@@ -1,0 +1,8 @@
+{
+  "lock": false,
+  "title": "Mailtrap email",
+  "id": "mailtrap-email",
+  "tasks": {
+    "test": "echo 'no tests'"
+  }
+}

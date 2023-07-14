@@ -1,0 +1,8 @@
+{
+  "lock": false,
+  "title": "Plausible event",
+  "id": "plausible-event",
+  "tasks": {
+    "test": "deno test"
+  }
+}
