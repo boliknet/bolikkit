@@ -14,9 +14,11 @@ class LikeButtonComponent extends HTMLElement {
     super();
 
     this.shadow = this.attachShadow({ mode: "open" });
-    const sheet = new CSSStyleSheet();
-    sheet.replaceSync(styles);
-    this.shadow.adoptedStyleSheets = [sheet];
+
+    // TODO: this constructor and replaceSync are supported on Safari only starting from March 2023
+    // const sheet = new CSSStyleSheet();
+    // sheet.replaceSync(styles);
+    // this.shadow.adoptedStyleSheets = [sheet];
 
     this.render();
   }
@@ -30,6 +32,10 @@ class LikeButtonComponent extends HTMLElement {
       text: this.getAttribute("text") ?? props.text,
       href: this.getAttribute("href") ?? props.href,
     });
+
+    const style = document.createElement("style");
+    style.textContent = styles;
+    this.shadow.appendChild(style);
   }
 
   static get observedAttributes() {

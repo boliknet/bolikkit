@@ -4,25 +4,13 @@
 import { mountPoll } from "./Poll.tsx";
 import { props } from "./props.ts";
 import { nodeName } from "./schema.ts";
+import { WebComponent } from "../../common/WebComponent.tsx";
 
 import styles from "./uno.css.js";
 
-class PollComponent extends HTMLElement {
-  private shadow: ShadowRoot;
-
+class PollComponent extends WebComponent {
   constructor() {
-    super();
-
-    this.shadow = this.attachShadow({ mode: "open" });
-    const sheet = new CSSStyleSheet();
-    sheet.replaceSync(styles);
-    this.shadow.adoptedStyleSheets = [sheet];
-
-    this.render();
-  }
-
-  attributeChangedCallback() {
-    this.render();
+    super(styles);
   }
 
   render() {

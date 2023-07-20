@@ -5,23 +5,11 @@ import { props } from "./props.ts";
 import { mount } from "./Story.tsx";
 import { nodeName } from "./schema.ts";
 import styles from "./uno.css.js";
+import { WebComponent } from "../../common/WebComponent.tsx";
 
-class StoryMediaComponent extends HTMLElement {
-  private shadow: ShadowRoot;
-
+class StoryMediaComponent extends WebComponent {
   constructor() {
-    super();
-
-    this.shadow = this.attachShadow({ mode: "open" });
-    const sheet = new CSSStyleSheet();
-    sheet.replaceSync(styles);
-    this.shadow.adoptedStyleSheets = [sheet];
-
-    mount(this.shadow, props);
-  }
-
-  attributeChangedCallback() {
-    this.render();
+    super(styles);
   }
 
   render() {
