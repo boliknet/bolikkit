@@ -19,13 +19,19 @@ const {
   presetUno,
 } = unocss;
 
+type ThemeMode = "light" | "dark" | "automatic" | "attribute-based";
+
+export { type ThemeMode };
+
 export async function withUnoCSSPlugin({
   projectDir,
   primaryColor,
+  themeMode,
 }: {
   /** Directory to bundle */
   projectDir: string;
   primaryColor?: string;
+  themeMode: ThemeMode;
 }): Promise<Plugin> {
   /** Directory where this file is located */
   const baseDir = path.dirname((new URL(import.meta.url)).pathname);
@@ -47,7 +53,17 @@ export async function withUnoCSSPlugin({
       },
     },
     presets: [
-      presetUno(),
+      presetUno({
+        dark: (themeMode == "automatic")
+          // Automicatic (media-query based)
+          ? "media"
+          : ({
+            // By default we specify the mode using an attribute mode-dark or mode-light.
+            // But during build time we allow to override the default mode.
+            dark: themeMode == "dark" ? ":host" : ":host([mode-dark])",
+            light: themeMode == "light" ? ":host" : ":host([mode-light])",
+          }),
+      }),
       presetIcons({
         scale: 1.2,
         cdn: "https://esm.sh/",

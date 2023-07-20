@@ -10,15 +10,15 @@ export function mountForm(el: Node, props: Props) {
 const inputClass = [
   "block w-full rounded-md",
   "py-1.5 px-2.5",
-  "text-gray-900 @dark:text-gray-200 shadow-sm @dark:shadow-none",
-  "ring-1 ring-inset ring-gray-300 @dark:ring-gray-500",
+  "text-gray-900 dark:text-gray-200 shadow-sm dark:shadow-none",
+  "ring-1 ring-inset ring-gray-300 dark:ring-gray-500",
   "placeholder:text-gray-400",
-  "focus:ring-2 focus:ring-inset focus:ring-primary focus:outline-none",
+  "focus:ring-2 focus:ring-inset !focus:ring-primary focus:outline-none",
   // Idea from: https://www.bram.us/2021/01/28/form-validation-you-want-notfocusinvalid-not-invalid/
   // We display an error ring when field is not focused and placeholder is not showns (meaning there is a value).
   // For this to work we need a non-empty placeholder.
   "not-focus:not-placeholder-shown:invalid:ring-red-400",
-  "@dark:bg-gray-900",
+  "dark:bg-gray-900",
 ].join(" ");
 
 function ContactForm({ title, fields, submitText, href }: Props) {
@@ -78,14 +78,14 @@ function ContactForm({ title, fields, submitText, href }: Props) {
     <form
       part="form"
       onSubmit={onSubmit}
-      class="flex flex-col gap-2 max-w-2xl mx-auto"
+      class="flex flex-col gap-2 max-w-xl mx-auto"
     >
-      {!!title && <span class="text-xl">{title}</span>}
+      {!!title && <span class="text-xl dark:text-gray-200">{title}</span>}
 
       {fields.map((f) => (
         <div>
           <label class="flex flex-col gap-2">
-            <span class="text-sm font-medium leading-6 text-gray-900 @dark:text-gray-200">
+            <span class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">
               {f.label}
             </span>
             {f.type == "textarea"

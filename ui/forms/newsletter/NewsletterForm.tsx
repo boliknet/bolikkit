@@ -10,11 +10,11 @@ export function mountForm(el: Node, props: Props) {
 const inputClass = [
   "block w-full rounded-md",
   "py-1.5 px-2.5",
-  "text-gray-900 @dark:text-gray-200 shadow-sm @dark:shadow-none",
-  "ring-1 ring-inset ring-gray-300 @dark:ring-gray-500",
+  "text-gray-900 dark:text-gray-200 shadow-sm dark:shadow-none",
+  "ring-1 ring-inset ring-gray-300 dark:ring-gray-500",
   "placeholder:text-gray-400",
-  "focus:ring-2 focus:ring-inset focus:ring-primary focus:outline-none",
-  "disabled:bg-gray-100 @dark:bg-gray-900 @dark:disabled:bg-gray-900",
+  "focus:ring-2 focus:ring-inset !focus:ring-primary focus:outline-none",
+  "disabled:bg-gray-100 dark:bg-gray-900 dark:disabled:bg-gray-900",
 ].join(" ");
 
 function NewsletterForm({ title, submitText, href }: Props) {
@@ -65,7 +65,7 @@ function NewsletterForm({ title, submitText, href }: Props) {
       onSubmit={onSubmit}
       class="flex flex-col gap-2 max-w-2xl mx-auto"
     >
-      {!!title && <span class="text-xl">{title}</span>}
+      {!!title && <span class="text-xl dark:text-gray-200">{title}</span>}
 
       <div class="flex gap-4">
         <input

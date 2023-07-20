@@ -8,8 +8,8 @@ export function LikeButton(el: ShadowRoot, props: Props) {
   btn.setAttribute("part", "button");
   btn.setAttribute(
     "class",
-    "group rounded-md bg-white @dark:bg-gray-200 px-3.5 py-1.5 text-sm font-semibold" +
-      " text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 @dark:ring-gray-600" +
+    "group rounded-md bg-white dark:bg-gray-200 px-3.5 py-1.5 text-sm font-semibold" +
+      " text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600" +
       " enabled:hover:bg-gray-50 flex gap-2 flex-items-center" +
       " transition-colors enabled:cursor-pointer",
   );

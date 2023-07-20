@@ -46,6 +46,7 @@ const ctx = await esbuild.context(buildOptions({
     await withUnoCSSPlugin({
       projectDir,
       primaryColor: supportedPrimaryColors.blue,
+      themeMode: "automatic",
     }),
   ],
 }));

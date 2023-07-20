@@ -92,7 +92,7 @@ function Poll({ question, answers, freeText, href }: Props) {
     <form
       part="form"
       onSubmit={onSubmit}
-      class="@dark:text-gray-100"
+      class="dark:text-gray-100"
     >
       <span class="text-lg py-2">{question}</span>
 
@@ -141,7 +141,7 @@ function Poll({ question, answers, freeText, href }: Props) {
 
               <input
                 type="text"
-                class="px-1 @dark:bg-gray-900 border-b-1"
+                class="px-1 dark:bg-gray-900 border-b-1"
                 onInput={(e) => onFreeText(e)}
                 placeholder={freeText}
                 disabled={submitting || submited}
@@ -155,7 +155,7 @@ function Poll({ question, answers, freeText, href }: Props) {
       <button
         type="submit"
         class={classNames(
-          "px-4 py-2 text-white @dark:text-gray-100 rounded-lg transition-colors",
+          "px-4 py-2 text-white dark:text-gray-100 rounded-lg transition-colors",
           {
             "bg-primary enabled-hover-bg-primary/80": !error,
             "bg-red-600 enabled-hover-bg-red-500": error,
