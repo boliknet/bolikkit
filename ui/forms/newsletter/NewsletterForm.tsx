@@ -8,7 +8,7 @@ export function mountForm(el: Node, props: Props) {
 }
 
 const inputClass = [
-  "block w-full rounded-md",
+  "appearance-none block w-full rounded-md",
   "py-1.5 px-2.5",
   "text-gray-900 dark:text-gray-200 shadow-sm dark:shadow-none",
   "ring-1 ring-inset ring-gray-300 dark:ring-gray-500",
