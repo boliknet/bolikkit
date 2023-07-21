@@ -1,6 +1,6 @@
 {
   "lock": false,
-  "title": "Plausible event",
+  "title": "Send an event to Plausible",
   "id": "plausible-event",
   "tasks": {
     "test": "deno test"

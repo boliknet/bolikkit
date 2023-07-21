@@ -1,6 +1,6 @@
 {
   "lock": false,
-  "title": "Buttondown",
+  "title": "Subscribe on Buttondown",
   "id": "buttondown-subscribe",
   "tasks": {
     "test": "echo 'No tests'"
