@@ -8,7 +8,7 @@
   "imports": {
     "json-schema-to-ts": "https://esm.sh/v122/json-schema-to-ts@2.8.0",
     "@tabler/icons": "https://esm.sh/v122/@tabler/icons@2.17.0",
-    "bkit_schemas/": "../../../schemas/"
+    "bkit/": "../../../"
   },
   "compilerOptions": {
     "allowJs": true,

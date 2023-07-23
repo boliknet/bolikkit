@@ -1,7 +1,7 @@
 import { Props } from "./schema.ts";
 import { render } from "preact";
 import { useState } from "preact/hooks";
-import { type PollVotePayload } from "bkit_schemas/events/poll_vote.ts";
+import { type PollVotePayload } from "bkit/schemas/events/poll_vote.ts";
 
 export function mountPoll(el: Node, props: Props) {
   render(<Poll {...props} />, el);

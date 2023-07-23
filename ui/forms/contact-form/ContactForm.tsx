@@ -1,7 +1,7 @@
 import { Props } from "./schema.ts";
 import { render } from "preact";
 import { useState } from "preact/hooks";
-import { type FormSubmitPayload } from "bkit_schemas/events/form_submit.ts";
+import { type FormSubmitPayload } from "bkit/schemas/events/form_submit.ts";
 
 export function mountForm(el: Node, props: Props) {
   render(<ContactForm {...props} />, el);

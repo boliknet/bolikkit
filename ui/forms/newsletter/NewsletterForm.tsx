@@ -1,7 +1,7 @@
 import { Props } from "./schema.ts";
 import { render } from "preact";
 import { useState } from "preact/hooks";
-import { type NewsletterSubscribePayload } from "bkit_schemas/events/newsletter_subscribe.ts";
+import { type NewsletterSubscribePayload } from "bkit/schemas/events/newsletter_subscribe.ts";
 
 export function mountForm(el: Node, props: Props) {
   render(<NewsletterForm {...props} />, el);

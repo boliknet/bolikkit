@@ -9,7 +9,7 @@
     "json-schema-to-ts": "https://esm.sh/v122/json-schema-to-ts@2.8.0",
     "preact": "https://esm.sh/v125/preact@10.15.1",
     "preact/": "https://esm.sh/v125/preact@10.15.1/",
-    "bkit_schemas/": "../../../schemas/"
+    "bkit/": "../../../"
   },
   "compilerOptions": {
     "allowJs": true,

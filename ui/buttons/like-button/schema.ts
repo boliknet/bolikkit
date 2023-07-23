@@ -1,6 +1,6 @@
 import type { FromSchema, JSONSchema } from "json-schema-to-ts";
-import { schema as producesSchema } from "bkit_schemas/events/button_click.ts";
-import { schema as hrefSchema } from "bkit_schemas/props/href.ts";
+import { schema as producesSchema } from "bkit/schemas/events/button_click.ts";
+import { schema as hrefSchema } from "bkit/schemas/props/href.ts";
 
 export const propsSchema = {
   $id: "https://schemas.bolik.net/v0/ui/like-button.json",

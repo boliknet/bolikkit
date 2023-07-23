@@ -6,6 +6,6 @@
   },
   "imports": {
     "json-schema-to-ts": "https://esm.sh/json-schema-to-ts@2.8.0?pin=v122",
-    "bkit_schemas/": "../schemas/"
+    "bkit/": "../"
   }
 }

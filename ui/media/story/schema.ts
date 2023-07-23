@@ -1,5 +1,5 @@
 import type { FromSchema, JSONSchema } from "json-schema-to-ts";
-import { schema as hrefSchema } from "bkit_schemas/props/href.ts";
+import { schema as hrefSchema } from "bkit/schemas/props/href.ts";
 
 // Reference: https://www.learnjsonschema.com/
 export const propsSchema = {

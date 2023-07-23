@@ -1,6 +1,6 @@
 import { Props } from "./schema.ts";
 import { IconHeart } from "@tabler/icons";
-import { type ButtonClickPayload } from "bkit_schemas/events/button_click.ts";
+import { type ButtonClickPayload } from "bkit/schemas/events/button_click.ts";
 
 export function LikeButton(el: ShadowRoot, props: Props) {
   const btn = document.createElement("button");
